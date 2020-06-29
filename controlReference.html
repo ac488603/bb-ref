@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Reference</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 700px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-bottom: 15px;
+      }
+      h3 {
+        margin-bottom: 7px;
+        color: #3c3c3c;
+      }
+      table tr td,
+      table tr th {
+        padding: 5px 25px;
+        text-align: right;
+      }
+
+      td {
+        font-family: monospace;
+        font-size: 15px;
+      }
+      table {
+        margin-bottom: 15px;
+      }
+
+      h1,
+      h3 {
+        text-align: center;
+      }
+
+      table tr:nth-child(odd) {
+        background-color: #dcdde1;
+      }
+      p {
+        line-height: 1.5;
+        font-family: monospace;
+        font-size: 18px;
+      }
+      #controller {
+        height: 250px;
+        background: #dfe4ea;
+        display: flex;
+        flex-direction: row;
+        border-radius: 5px;
+        box-shadow: 1px 2px#ced6e0;
+      }
+
+      #directions {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      #up,
+      #down {
+        width: 60%;
+        flex: 1;
+        background-color: #2f3542;
+        border-radius: 5px;
+      }
+      #left-right {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #left,
+      #right {
+        background-color: #747d8c;
+        width: 85%;
+        height: 85%;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      #buttons {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 15px;
+      }
+      #red {
+        background-color: #ff4757;
+        height: 75%;
+        flex: 1;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+      #blue {
+        background-color: #5352ed;
+        height: 75%;
+        flex: 1;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+      #call {
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        font-size: 30px;
+        display: block;
+        padding: 25px 0;
+        background-color: #16a085;
+        border-radius: 5px;
+        color: #ecf0f1;
+        font-family: "Anton", sans-serif;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bullet Battle Controls</h1>
+    <div>
+      <h3>Player One</h3>
+      <div>
+        <table>
+          <tr>
+            <th>Control</th>
+            <th>Button</th>
+          </tr>
+          <tr>
+            <td>left</td>
+            <td>left arrow</td>
+          </tr>
+          <tr>
+            <td>right</td>
+            <td>right arrow</td>
+          </tr>
+          <tr>
+            <td>up</td>
+            <td>up arrow</td>
+          </tr>
+          <tr>
+            <td>down</td>
+            <td>down arrow</td>
+          </tr>
+          <tr>
+            <td>attack</td>
+            <td>spacebar</td>
+          </tr>
+          <tr>
+            <td>pickup</td>
+            <td>down + attack</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3>Player Two</h3>
+      <div>
+        <table>
+          <tr>
+            <th>Control</th>
+            <th>Button</th>
+          </tr>
+          <tr>
+            <td>left</td>
+            <td>a</td>
+          </tr>
+          <tr>
+            <td>right</td>
+            <td>d</td>
+          </tr>
+          <tr>
+            <td>up</td>
+            <td>w</td>
+          </tr>
+          <tr>
+            <td>down</td>
+            <td>s</td>
+          </tr>
+          <tr>
+            <td>attack</td>
+            <td>z</td>
+          </tr>
+          <tr>
+            <td>pickup</td>
+            <td>down + attack</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      <p>
+        The controls for player one and two are configurable. If you would like
+        to register new keys for those players, you are able to in the menu.
+        Simply navigate to the controls menu under the options menu.
+      </p>
+    </div>
+    <br />
+    <div>
+      <p>
+        You can also try out our experimental controller feature. Simply
+        navigate to
+        <a href="http://bullet-battle.herokuapp.com/">
+          http://bullet-battle.herokuapp.com/
+        </a>
+        on any mobile device.
+      </p>
+      <p>
+        You will be presented with a form that requests a session code that can
+        be found in the top right corner of the start screen. Once the server
+        receives you session code, the server returns a controller map that
+        looks like this:
+      </p>
+      <br />
+      <div id="controller">
+        <div id="directions">
+          <div id="up"></div>
+          <div id="left-right">
+            <div id="left"></div>
+            <div id="right"></div>
+          </div>
+          <div id="down"></div>
+        </div>
+        <div id="buttons">
+          <div id="red"></div>
+          <div id="blue"></div>
+        </div>
+      </div>
+      <p>Red is attack and blue is jump. (supports 2-4 players)</p>
+      <br />
+    </div>
+    <div>
+      <p>What are you waiting for?? Try it out.</p>
+      <br />
+      <a href="http://bullet-battle.herokuapp.com/" target="_blank" id="call">
+        Play Bullet Battle
+      </a>
+    </div>
+  </body>
+</html>
